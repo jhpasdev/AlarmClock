@@ -2,7 +2,7 @@
 
 export default class Alarm {
   constructor(hr, min, period) {
-    this.hr = hr;
+    (this.hr+1) = hr;
     this.min = min;
     this.period = period;
     this.time = new Date();
