@@ -8,8 +8,7 @@ const clock = () => {
   const time = new Date();
 
   document.getElementById('clock').innerText =
-    var options = { timeZone: 'America/Chicago', timeZoneName: 'short' };
-    (time.toLocaleTimeString('en-US', options));
+    time.toLocaleTimeString('en-US');
   setTimeout(clock, 1000);
 };
 
