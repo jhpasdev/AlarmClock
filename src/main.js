@@ -3,6 +3,49 @@ import AlarmApp from './alarmapp.js';
 import AlarmView from './alarmview.js';
 import AlarmController from './alarmcontroller.js';
 
+// Getting it to show the current time on the page
+var showCurrentTime = function()
+{
+    // display the string on the webpage
+    var clock2 = document.getElementById('clock2');
+
+    var currentTime = new Date();
+
+    var hours = (currentTime.getHours()-1);
+    var minutes = currentTime.getMinutes();
+    var seconds = currentTime.getSeconds();
+    var meridian = "AM";
+
+    // Set hours
+	  if (hours >= noon)
+	  {
+		  meridian = "PM";
+	  }
+
+	  if (hours > noon)
+	  {
+		  hours = hours - 12;
+	  }
+
+    // Set Minutes
+    if (minutes < 10)
+    {
+        minutes = "0" + minutes;
+    }
+
+    // Set Seconds
+    if (seconds < 10)
+    {
+        seconds = "0" + seconds;
+    }
+
+    // put together the string that displays the time
+    var clockTime = hours + ':' + minutes + ':' + seconds + " " + meridian + "!";
+
+    clock2.innerText = clockTime;
+};
+
+
 // Current Time
 const clock = () => {
   const time = new Date();
